@@ -31,6 +31,9 @@ echo '<h1>Zou !</h1>';
 $a = new Blog\Commentaire();
 $a->texte='lorem ipsum';
 echo $a;
+$b = new Album\Commentaire();
+$b->texte='sit amet';
+echo $b;
 ?>
 </body>
 </html>
