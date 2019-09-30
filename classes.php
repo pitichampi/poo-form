@@ -112,7 +112,7 @@ class Client3
 {
     private $prenom;
     private $nom;
-    public $num;
+    private $num;
     public static $count = 0;
 
     public function __construct($id)
@@ -122,6 +122,15 @@ class Client3
 //        $this->count++;
     }
 
+    public function __set($name, $value)
+    {
+        $this->$name=$value;
+        echo $name.' set to '.$value;
+    }
+    public function __get($name)
+    {
+        return $this->$name;
+    }
 
 
 }
