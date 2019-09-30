@@ -1,9 +1,10 @@
 <?php
+namespace Fruit;
 require ('orange.php');
 require ('pomme.php');
 
-//use Oranges;
-//use Pommes;
+use Oranges;
+use Pommes;
 
 ?>
 
