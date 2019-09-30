@@ -7,7 +7,12 @@ function chargeClass($className){
     $inc='x'.$include[0].'/'.$include[1].'.php';
     include $inc;
     */
-    include 'x'.$className.'.php'; // (ça marche aussi)
+
+//    include 'x'.$className.'.php';  (ça marche aussi mais que sous windows)
+
+    // et là c'est plus propre
+    include 'x'.str_replace('\\', '/', $className).'.php';
+
 }
 spl_autoload_register('chargeClass');
 ?>
