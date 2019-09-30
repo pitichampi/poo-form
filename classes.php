@@ -115,11 +115,18 @@ class Client3
     private $num;
     public static $count = 0;
 
-    public function __construct($id)
+    public function __construct($id,$name=false,$prename=false)
     {
         echo 'New client -- ';
         $this->num = $id;
-//        $this->count++;
+        if($name){
+            $this->nom=$name;
+        }
+        if($prename){
+            $this->prenom=$prename;
+        }
+        $this::$count++;
+        echo $this::$count;
     }
 
     public function __set($name, $value)
@@ -131,12 +138,16 @@ class Client3
     {
         return $this->$name;
     }
+    public function __destruct()
+    {
+//        echo 'Bouuuuuuumm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!';
+    }
 
 
 }
-$zou=new Client3(666);
-echo "Client n°".$zou->num;
-
+$zou=new Client3(666,'tata','suzane');
+echo "Client n°".$zou->num.' is '.$zou->nom.' '.$zou->prenom;
+$zu=new Client3(888);
 ?>
 </body>
 </html>
