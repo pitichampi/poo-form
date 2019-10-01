@@ -12,14 +12,14 @@ class Personnage
 
     public function getW($w){
         $this->arme = $w;
-        echo '<br>XXXXXXXXXXXXXXX<br>';
-        echo $this->nom.' équipe '.$w->nom.'<br>';
+        echo '<div class="getw">';
+        echo $this->nom.' équipe '.$w->nom.'<br></div>';
         return $this;
     }
     public function getS($s){
         $this->armure = $s;
-        echo '<br>[][][][][][][][]<br>';
-        echo $this->nom.' équipe '.$s->nom.'<br>';
+        echo '<div class="gets">';
+        echo $this->nom.' équipe '.$s->nom.'<br></div>';
         return $this;
     }
 
@@ -31,13 +31,13 @@ class Personnage
         if ($damage > 0){
             $adversaire->setVie($life-$damage);
         }
-        echo '<br>******<br>'. $this->getNom(). ' attaque '.$adversaire->getNom().' avec ' .$damage. ' dommages<br>';
+        echo '<div class="fight">'. $this->getNom(). ' attaque '.$adversaire->getNom().' avec ' .$damage. ' dommages<br></div>';
         return $this;
     }
 
     public function setNom($nom){
         $this->nom = $nom;
-        echo 'Bienvenue à toi '.$nom.' !<br>';
+        echo '<div class="welcome">Bienvenue à toi '.$nom.' !<br></div>';
         return $this;
     }
 
@@ -83,7 +83,7 @@ class Personnage
 
     public function __toString()
     {
-        $out='<br>---------<br>';
+        $out='<div class="perso">';
         $out.='Nom : '.$this->getNom().'<br>';
         $out.='Classe : '.$this->getClass().'<br>';
         $out.='Vie : '.$this->getVie().'<br>';
@@ -96,7 +96,7 @@ class Personnage
         if(isset($this->armure)){
            $out.=$this->armure->nom .'(+ ' .$this->armure->defense. 'def)';
         }else{$out.='Rien :(';}
-        $out.='<br>';
+        $out.='<br></div>';
         return $out;
     }
 
