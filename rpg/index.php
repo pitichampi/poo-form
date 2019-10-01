@@ -71,9 +71,8 @@ require 'autoload.php';
 <div id="game">
     <?php
     $hercule = new Grosbill('Grorcule');
-    $merlin = new Mago('Mamie Poteur');
-
     echo $hercule;
+    $merlin = new Mago('Mamie Poteur');
     echo $merlin;
 
     $hercule->fight($merlin);
