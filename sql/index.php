@@ -14,13 +14,24 @@ $pdo =  new PDO('mysql:host=127.0.0.1;dbname=poo','root','123456');
 <?php
 $sql='SELECT * FROM users WHERE login=:login';
 $stmt = $pdo->prepare($sql);
-$login='pouet';
-$stmt->bindParam(':login',$login);
-$stmt->execute();
 
-$row = $stmt->fetch();
-echo $row['email'];
-error_log('Tuuuut');
+function dispDB($login)
+{
+    GLOBAL $stmt;
+    $stmt->bindParam(':login', $login, PDO::PARAM_STR);
+    $stmt->execute();
+
+    $row = $stmt->fetch();
+    foreach ($row as $col => $toto) {
+        if (gettype($col) != 'integer') {
+            echo $col . ' => ' . $toto . ' ║ ';
+        }
+    }
+    echo '<br>';
+}
+dispDB('pouet');
+dispDB('toto');
+
 ?>
 
 
