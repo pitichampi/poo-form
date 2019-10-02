@@ -5,8 +5,7 @@
     $delete = 'DELETE FROM users where login=:login';
     $select = 'SELECT login from users WHERE login=:login';
     $update = 'UPDATE users SET nom=:nom,email=:email WHERE login=:login';
-
-
+    
 $post = $_POST;
     if (isset($_POST['login'])) {
         $login = $post['login'];
@@ -52,6 +51,7 @@ $todel=$post['todel'];
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="icon" href="https://cdn1.iconfinder.com/data/icons/users-and-avatars/32/user_male_style_hipster_mustache_glasses_profile_man-512.png">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -65,20 +65,20 @@ $todel=$post['todel'];
     <?php
 
     if (isset($run) && $run && $added) {
-        echo '<script> M.toast({html:"Utilisateur '.$login.' ajouté"})</script>';
+        echo '<script> M.toast({html:"Utilisateur '.$login.' ajouté",classes:"light-blue darken-1"})</script>';
     }
     if (isset($run) && $run && $modified) {
-        echo '<script> M.toast({html:"Utilisateur '.$login.' modifié"})</script>';
+        echo '<script> M.toast({html:"Utilisateur '.$login.' modifié",classes:"deep-purple darken-2"})</script>';
     }
     if (isset($run2) && $run2) {
-        echo '<script> M.toast({html:"Utilisateur '.$todel.' supprimé"})</script>';
+        echo '<script> M.toast({html:"Utilisateur '.$todel.' supprimé",classes:"red darken-4"})</script>';
     }
     ?>
-    <h1>Gestion des users :)</h1>
+    <h1 class="red-text">Gestion des users :)</h1>
     <form action="index.php" method="post">
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">how_to_reg</i>
+                <i class="material-icons prefix">flash_on</i>
                 <input id="login" type="text" name="login">
                 <label for="login">Login</label>
             </div>
@@ -99,7 +99,7 @@ $todel=$post['todel'];
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Ajouter/Modifier</button>
+                <button class= "light-blue darken-1 pulse btn waves-effect waves-light" type="submit" name="action"><i class="material-icons right">cloud_done</i>Ajouter/Modifier</button>
             </div>
         </div>
         <div class="row">
@@ -111,14 +111,14 @@ $todel=$post['todel'];
     <form action="index.php" method="post">
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">thumb_down_alt</i>
+                <i class="material-icons prefix">flash_off</i>
                 <input id="todel" type="text" name="todel">
                 <label for="todel">Login à supprimer</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <button class="btn waves-effect waves-light" type="submit" name="action2">Supprimer</button>
+                <button class="deep-orange darken-1 pulse btn waves-effect waves-light" type="submit" name="action2"><i class="material-icons right">cloud_off</i>Supprimer</button>
             </div>
         </div>
 
