@@ -23,7 +23,7 @@ class Personnage
 
     /**
      * Le personnage prend une arme
-     * @param $w Il s'agit de l'arme que le perso récupère.
+     * @param object $w Il s'agit de l'arme que le perso récupère.
      * @return $this Pour chaîner les événements...
      */
     public function getW($w){
@@ -35,7 +35,7 @@ class Personnage
 
     /**
      * Le personnage revet une armure
-     * @param $s C'est l'armure que le personnage récupère
+     * @param object $s C'est l'armure que le personnage récupère
      * @return $this
      */
     public function getS($s){
@@ -47,7 +47,7 @@ class Personnage
 
     /**
      * Et c'est parti pour l'attaque !
-     * @param $adversaire C'est le vilain qu'on a décidé de frapper bien fort !
+     * @param object $adversaire C'est le vilain qu'on a décidé de frapper bien fort !
      * @return $this
      */
     public function fight($adversaire){
@@ -64,7 +64,7 @@ class Personnage
 
     /**
      * Permet de donner un nom à son perso.
-     * @param $nom  C'est le nom du gus !
+     * @param string $nom  C'est le nom du gus !
      * @return $this
      */
     public function setNom($nom){
@@ -91,7 +91,7 @@ class Personnage
 
     /**
      * Affecte une valeur à la vie d'un personnage
-     * @param $vie  Quantité de vie totale que l'on affecte au personnage
+     * @param int $vie  Quantité de vie totale que l'on affecte au personnage
      * @return $this
      */
     public function setVie($vie){
@@ -109,7 +109,7 @@ class Personnage
 
     /**
      * Paramètre la valeur d'attaque d'un personnage
-     * @param $att  Valeur d'attaque du personnage (sans son arme)
+     * @param int $att  Valeur d'attaque du personnage (sans son arme)
      * @return $this
      */
     public function setAtt($att){
@@ -131,7 +131,7 @@ class Personnage
 
     /**
      * Paramètre la valeur de défense d'un personnage
-     * @param $def  Valeur de défense du personnage (sans son armure)
+     * @param int $def  Valeur de défense du personnage (sans son armure)
      * @return $this
      */
     public function setDef($def){
@@ -176,7 +176,7 @@ class Personnage
 
     /**
      * Personnage constructor.
-     * @param $name Nom du personnage
+     * @param int $name Nom du personnage
      */
     public function __construct($name)
     {

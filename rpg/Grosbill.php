@@ -15,7 +15,7 @@ class Grosbill extends Personnage
 
     /**
      * Grosbill constructor.
-     * @param $name Nom du Grosbill
+     * @param string $name Nom du Grosbill
      */
     public function __construct($name)
     {

@@ -15,7 +15,7 @@ class Mago extends Personnage
 
     /**
      * Mago constructor.
-     * @param $name Nom du Mago
+     * @param string $name Nom du Mago
      */
     public function __construct($name)
     {

@@ -1,4 +1,11 @@
 <?php
+/**
+ * Autoload
+ *
+ * On charge tous les éléments
+ * nécessaires au bon fonctionnement
+ * du jeu
+ */
 require 'autoload.php';
 ?>
 

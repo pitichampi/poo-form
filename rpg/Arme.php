@@ -14,13 +14,19 @@
  */
 class Arme
 {
+    /**
+     * @var string $nom Le nom de l'arme utilisée
+     */
     public $nom;
+    /**
+     * @var string $attaque La puissance de l'attaque de l'arme
+     */
     public $attaque;
 
     /**
      * Arme constructor.
-     * @param $nom  Nom de l'arme
-     * @param $pow  Puissance de l'arme (augmente d'autant les dégats provoqués)
+     * @param string $nom  Nom de l'arme
+     * @param int $pow  Puissance de l'arme (augmente d'autant les dégats provoqués)
      */
     public function __construct($nom,$pow)
     {

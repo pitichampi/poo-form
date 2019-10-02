@@ -19,8 +19,8 @@ class Armure
 
     /**
      * Armure constructor.
-     * @param $nom  Nom de l'armure
-     * @param $pow  Puissance de l'armure (réduit d'autant les dégats subis)
+     * @param string $nom  Nom de l'armure
+     * @param int $pow  Puissance de l'armure (réduit d'autant les dégats subis)
      */
     public function __construct($nom,$pow)
     {
