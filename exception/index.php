@@ -10,7 +10,22 @@
 <body>
 
 <?php
-
+try {
+    $x = 4;
+    $y = 0;
+    if ($y == 0) {
+        throw new ArithmeticError('Woooooo fais gaffe tu vas faire un trou dans l\'univers !');
+    }
+    $z = $x / $y;
+}
+catch (Exception $e){
+    echo 'Pokémon "Divide by zero" capturé avec une pokéball :) ';
+    echo $e->getMessage();
+}
+catch (Error $e){
+    echo 'Pokémon "Divide by zero" capturé avec une superball :) ';
+    echo $e->getMessage();
+}
 ?>
 
 
