@@ -1,9 +1,22 @@
 <?php
-
+/**
+ * Class Grosbill
+ *
+ * Le grosbill est un personnage qui tape dur
+ * mais un peu con...
+ *
+ * @author Pierre [<contact@pitichampi.fr>]
+ *
+ *
+ */
 class Grosbill extends Personnage
 {
     protected $class = 'Grosbill';
 
+    /**
+     * Grosbill constructor.
+     * @param $name Nom du Grosbill
+     */
     public function __construct($name)
     {
         parent::__construct($name);
