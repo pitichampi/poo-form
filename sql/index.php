@@ -1,6 +1,3 @@
-<?php
-$pdo =  new PDO('mysql:host=127.0.0.1;dbname=poo','root','123456');
-    ?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -12,26 +9,38 @@ $pdo =  new PDO('mysql:host=127.0.0.1;dbname=poo','root','123456');
 </head>
 <body>
 <?php
-$sql='SELECT * FROM users WHERE login=:login';
-$stmt = $pdo->prepare($sql);
-
-function dispDB($login)
-{
-    GLOBAL $stmt;
-    $stmt->bindParam(':login', $login, PDO::PARAM_STR);
-    $stmt->execute();
-
-    $row = $stmt->fetch();
-    foreach ($row as $col => $toto) {
-        if (gettype($col) != 'integer') {
-            echo $col . ' => ' . $toto . ' ║ ';
-        }
-    }
-    echo '<br>';
+$ok=true;
+try {
+    $pdo = new PDO('mysql:host=127.0.0.1;dbname=poo', 'root', '123456',
+        array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 }
-dispDB('pouet');
-dispDB('toto');
 
+catch (PDOException $exception){
+    echo "Zzzzzz ça grille !!! ".$exception->getMessage();
+    $ok=false;
+}
+if($ok) {
+    $sql = 'SELECT * FROM users WHERE login=:login';
+    $stmt = $pdo->prepare($sql);
+
+    function dispDB($login)
+    {
+        GLOBAL $stmt;
+        $stmt->bindParam(':login', $login, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $row = $stmt->fetch();
+        foreach ($row as $col => $toto) {
+            if (gettype($col) != 'integer') {
+                echo $col . ' => ' . $toto . ' ║ ';
+            }
+        }
+        echo '<br>';
+    }
+
+    dispDB('pouet');
+    dispDB('toto');
+}
 ?>
 
 
